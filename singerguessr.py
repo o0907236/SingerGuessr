@@ -52,7 +52,7 @@ def answer(title):
   return songs[title]
 
 def result(guess, title):
-  if songs[title] == guess:
+  if songs[title].upper() == guess.upper():
     return True
   else:
     return False
