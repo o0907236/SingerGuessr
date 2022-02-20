@@ -10,9 +10,14 @@ import csv
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    title = randomSong()
+  global title
+  title = randomSong()
+  return render_template('index.html',  title="Title: "+title)
+
+@app.route('/answer', methods=['POST', 'GET'])
+def game():
     if request.method == "POST":
       guess = request.form.get('guess')
       ans = answer(title)
@@ -21,9 +26,7 @@ def home():
         return render_template('index.html', title="Title: "+title, correct=True)
       
       else:
-        return render_template('index.html', title="Title: "+title, incorrect=True, artist=answer)
-      
-    return render_template('index.html', title="Title: "+title)
+        return render_template('index.html', title="Title: "+title, incorrect=True, artist=ans)
 
 def randomSong():
   titles = list(songs)
