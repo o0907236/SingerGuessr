@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>SingerGuessr</title>
+    <link href="style.css" rel="stylesheet" 
+    type="text/css" />
+    
+  </head>
+  <body>
+    <div class="header">
+  <h1>
+    SingerGuessr
+    
+
+  </h1>
+  
+  <!-- <h2>Do you know these artists </h2> -->
+</div>
+<div class="topnav">
+  <a href="index.html" id="hp">Home</a>
+  <a href="aboutus.html">About Us</a>
+  
+</div>
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+<div class="topnav">
+      <img src="tyler.jpg" width= 220px>
+      <img src="harry.jpeg" width= 220px>
+      <img src="travis.jpeg" width= 220px>
+      <img src="tri.jpg" width= 220px>
+    </div>
+      
+      <form class="submit-text" name = 'enter' action = "http://localhost:5000/" method = "POST">
+            <h2 class="song-name">{{title}}</h2>
+            <h3 class="prompt">Guess the Singer!</h3> 
+            <!-- pls im not a gameshow person someone can make a more fun prompt for the guess -->
+            <input type="text" name = "guess" placeholder="Artist" id="user-answer">
+            <input  class="submit-button" type="submit" text="Submit">
+      </form>
+      {% if correct %}
+        <div>Correct</div>
+      {% endif %}
+
+      {% if incorrect %}
+        <div>Incorrect</div>
+        <div id="artist">{{artist}}</div>
+      {% endif %}
+    </ul>
+    <script src="lyricsgame.js"></script>
+    
+  </body>
+</html>
