@@ -28,10 +28,10 @@
 &nbsp
 &nbsp
 <div class="topnav">
-      <img src="tyler.jpg" width= 220px>
-      <img src="harry.jpeg" width= 220px>
-      <img src="travis.jpeg" width= 220px>
-      <img src="tri.jpg" width= 220px>
+      <img src="{{url_for('static', filename='tyler.jpg')}}" width= 220px>
+      <img src="{{url_for('static', filename='harry.jpeg')}}" width= 220px>
+      <img src="{{url_for('static', filename='travis.jpeg')}}" width= 220px>
+      <img src="{{url_for('static', filename='tri.jpg')}}" width= 220px>
     </div>
       
       <form class="submit-text" name = 'enter' action = "http://localhost:5000/answer" method = "POST">
