@@ -34,13 +34,14 @@
       <img src="tri.jpg" width= 220px>
     </div>
       
-      <form class="submit-text" name = 'enter' action = "http://localhost:5000/" method = "POST">
+      <form class="submit-text" name = 'enter' action = "http://localhost:5000/answer" method = "POST">
             <h2 class="song-name">{{title}}</h2>
-            <h3 class="prompt">Guess the Singer!</h3> 
+            <h3 class="prompt">Enter your guess!</h3> 
             <!-- pls im not a gameshow person someone can make a more fun prompt for the guess -->
             <input type="text" name = "guess" placeholder="Artist" id="user-answer">
             <input  class="submit-button" type="submit" text="Submit">
       </form>
+
       {% if correct %}
         <div>Correct</div>
       {% endif %}
@@ -49,8 +50,11 @@
         <div>Incorrect</div>
         <div id="artist">{{artist}}</div>
       {% endif %}
-    </ul>
-    <script src="lyricsgame.js"></script>
+
+      <div>Try again?</div>
+      <form class="try-again" name = 'enter' action = "http://localhost:5000/" method = "GET">
+        <input  class="submit-button" type="submit" text="New Song">
+    </form>
     
   </body>
 </html>
