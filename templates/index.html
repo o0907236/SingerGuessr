@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>SingerGuessr</title>
+
     <link href="static/css/style.css" rel="stylesheet" 
     type="text/css" />
     
@@ -51,10 +52,14 @@
         <div id="artist">{{artist}}</div>
       {% endif %}
 
-      <div>Try again?</div>
-      <form class="try-again" name = 'enter' action = "http://localhost:5000/" method = "GET">
-        <input  class="submit-button" type="submit" text="New Song">
-    </form>
+      <h4>Try again?</h4>
+      <span>
+        <form class="try-again" name = 'enter' action = "http://localhost:5000/" method = "GET">
+          <button  class="submit-button" type="input" name="new" text="New Song">
+          <label for="new">New Song</label>
+      </form>
+      </span>
+      
     
   </body>
 </html>
